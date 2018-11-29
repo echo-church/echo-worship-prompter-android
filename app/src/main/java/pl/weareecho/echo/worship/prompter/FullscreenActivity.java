@@ -43,10 +43,13 @@ public class FullscreenActivity extends Activity {
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         mDecorView = getWindow().getDecorView();
         mWebView = new WebView(this);
-        mWebView.getSettings().setLoadWithOverviewMode(true);
+        mWebView.clearCache(true);
+        mWebView.clearHistory();
         mWebView.setBackgroundColor(Color.TRANSPARENT);
+        mWebView.getSettings().setLoadWithOverviewMode(true);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.getSettings().setDomStorageEnabled(true);
+        mWebView.getSettings().setBuiltInZoomControls(false);
         mWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
