@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ECHO Worship</string>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+    <string name="pref_title_prompter_url">URL</string>
+
+    <!-- General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string name="pref_title_clear_device_owner_app">Clear device owner app</string>
+    <string name="pref_summary_clear_device_owner_app">Click here to clear device owner app and allow uninstalling of this app</string>
+    <string name="pref_title_exit_kiosk">Exit Kiosk Mode</string>
+    <string name="pref_summary_exit_kiosk">Click here to exit Kiosk Mode</string>
+    <string name="pref_title_launcher">Launcher</string>
+    <string name="pref_description_launcher">This app can be used as the default launcher</string>
+
+
+    <string name="device_admin_enabled">Device Admin enabled</string>
+    <string name="device_admin_warning">Warning: Device Admin is going to be disabled.</string>
+    <string name="device_admin_disabled">Device Admin disabled</string>
+    <string name="kiosk_mode_enabled">Kiosk Mode enabled</string>
+    <string name="kiosk_mode_disabled">Kiosk Mode disabled</string>
+    <string name="kiosk_not_permitted">Kiosk Mode not permitted</string>
+    <string name="not_device_admin">This app is not a device admin!</string>
+    <string name="not_device_owner">This app is not the device owner!</string>
+
+</resources>

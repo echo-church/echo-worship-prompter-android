@@ -1,0 +1,47 @@
+package pl.weareecho.echo.worship.prompter
+
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import android.content.pm.PackageManager
+import android.content.ComponentName
+
+
+class HomeActivity : Activity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        onActivityResult(0, 0, null)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        val intent = Intent(this, FullscreenActivity::class.java)
+        startActivityForResult(intent, 0)
+    }
+
+    companion object {
+        @JvmStatic
+        fun homeComponentEnabled(context: Context, enable: Boolean) {
+            Log.d("HomeActivity", "Set enabled=" + enable)
+            val packageManager = context.packageManager
+            val componentName = ComponentName(context, HomeActivity::class.java)
+
+            val componentEnabledSetting = packageManager.getComponentEnabledSetting(componentName)
+            val isEnabled: Boolean = componentEnabledSetting == PackageManager.COMPONENT_ENABLED_STATE_ENABLED
+
+            if (isEnabled != enable) {
+                var newEnabledState = PackageManager.COMPONENT_ENABLED_STATE_ENABLED
+                if (!enable) {
+                    newEnabledState = PackageManager.COMPONENT_ENABLED_STATE_DISABLED
+                }
+                packageManager.setComponentEnabledSetting(
+                        componentName,
+                        newEnabledState,
+                        PackageManager.DONT_KILL_APP
+                )
+            }
+        }
+    }
+}

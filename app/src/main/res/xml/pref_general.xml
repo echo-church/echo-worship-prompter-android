@@ -1,0 +1,31 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/ECHO_WORSHIP_PROMPTER_URL"
+        android:inputType="textUri"
+        android:key="echo_worship_prompter_url"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_prompter_url" />
+
+    <Preference
+        android:key="echo_worship_prompter_clear_device_owner_app"
+        android:summary="@string/pref_summary_clear_device_owner_app"
+        android:title="@string/pref_title_clear_device_owner_app" />
+
+    <Preference
+        android:key="echo_worship_prompter_exit_kiosk_mode"
+        android:summary="@string/pref_summary_exit_kiosk"
+        android:title="@string/pref_title_exit_kiosk" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="echo_worship_prompter_launcher_switch"
+        android:summary="@string/pref_description_launcher"
+        android:title="@string/pref_title_launcher" />
+
+</PreferenceScreen>
